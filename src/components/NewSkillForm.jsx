@@ -14,16 +14,14 @@ function handleAddSkill(){
   return (
     <div>
         <h2 style={{color: '#f6bd60', textAlign: "center"}}>Add New Skill</h2>
-       <form className="form-layout" action="">
-        <label >Skill
+       <form className="NewSkillForm" action="">
+        <label >Skill </label>
         <input 
         value={newSkill}
         onChange={(evt)=> setNewSkill(evt.target.value)}
         placeholder="New Skill" 
         />
-        </label>
-        <label className="label-name" htmlFor="">
-            Level
+        <label className="label-name" htmlFor="">Level </label>
             <select >
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -31,7 +29,6 @@ function handleAddSkill(){
                 <option value="4">4</option>
                 <option value="5">5</option>
             </select>
-        </label>
         <button onClick={handleAddSkill}>Add Skill</button>
        </form>
     

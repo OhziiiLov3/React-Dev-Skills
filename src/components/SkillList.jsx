@@ -2,14 +2,14 @@ import React from 'react'
 import SkillListItem from "./SkillListItem";
 
 
-const SkillList = () => {
+const SkillList = ({skills}) => {
   return (
     <div>
-      <ul>
         <h1 style={{color: '#f6bd60', textAlign: "center"}}>Skills List</h1>
-        <SkillListItem/>
-        <SkillListItem/>
-        <SkillListItem/>
+      <ul>
+        {skills.map((skill,idx)=>
+        <SkillListItem skill={skill} key={idx}/>
+        )}
       </ul>
     </div>
   )
