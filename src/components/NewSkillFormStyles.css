@@ -1,0 +1,11 @@
+.form-layout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.label-name{
+    padding: 1rem;
+    
+
+}
