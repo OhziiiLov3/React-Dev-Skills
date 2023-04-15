@@ -1,15 +1,10 @@
-.flex-ctr-ctr {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 .SkillListItem {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0.5rem;
-    padding: 0.2rem 0.6rem;
+    padding: 0.3rem 0.6rem;
     border: 0.2rem solid var(--darkyellow);
     border-radius: 0.3rem;
     list-style: none;
@@ -18,8 +13,8 @@
     font-weight: bold;
 }
 
-.SkillListItem >.level {
-    margin-left: 5rem;
+.SkillListItem > .level {
+    margin-left: 6rem;
     padding: 0.3rem 0.8rem;
     color: white;
     background-color: var(--secondary);

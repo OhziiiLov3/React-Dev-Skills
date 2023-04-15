@@ -1,35 +1,41 @@
 import React, {useState} from 'react'
 import './NewSkillFormStyles.css'
 
-const NewSkillForm = () => {
-const [newSkill, setNewSkill] = useState("");
+const NewSkillForm = ({handleSkill}) => {
 
-const [showSkill, setShowSkill] = useState(false);
+const [formData, setFormData] = useState({
+    name: "",
+    level: "3",
+});
 
-function handleAddSkill(){
-    alert(newSkill)
+
+function handleChange(e){
+    setFormData( {
+        ...formData,
+        [e.target.name]: e.target.value,
+    })
 }
 
+function handleAddNew(e){
+  e.preventDefault()
+  handleSkill(formData)
+}
 
-  return (
+return (
     <div>
-        <h2 style={{color: '#f6bd60', textAlign: "center"}}>Add New Skill</h2>
-       <form className="NewSkillForm" action="">
-        <label >Skill </label>
-        <input 
-        value={newSkill}
-        onChange={(evt)=> setNewSkill(evt.target.value)}
-        placeholder="New Skill" 
-        />
+      <h2 style={{color: '#f6bd60', textAlign: "center"}}>Add New Skill</h2>
+       <form className="NewSkillForm" onSubmit={handleAddNew}>
+        <label htmlFor='' >Skill </label>
+        <input  type="text" onChange={handleChange} value={formData.name}  name='name' placeholder='New Skill' />
         <label className="label-name" htmlFor="">Level </label>
-            <select >
+            <select name='level' value={formData.level} onChange={handleChange}>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
                 <option value="5">5</option>
             </select>
-        <button onClick={handleAddSkill}>Add Skill</button>
+        <button type='submit'>Add Skill</button>
        </form>
     
     </div>

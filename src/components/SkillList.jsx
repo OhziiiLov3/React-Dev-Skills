@@ -8,7 +8,7 @@ const SkillList = ({skills}) => {
         <h1 style={{color: '#f6bd60', textAlign: "center"}}>Skills List</h1>
       <ul>
         {skills.map((skill,idx)=>
-        <SkillListItem skill={skill} key={idx}/>
+        <SkillListItem skill={skill}  key={idx}/>
         )}
       </ul>
     </div>
